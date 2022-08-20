@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+  <link rel="shortcut icon" href="../static/Logofinal.jpg" type="image/x-icon">
+    <title>Project Name</title>
+</head>
+<body>
+    <nav>
+        <div class="logo_name">
+            
+            <div class="logo">
+                <a href="../views/jobs.html"><img src="../static/Logofinal.jpg" alt="logo"></a>
+            </div>
+
+            <div class="tagline">
+                <a href="../views/jobs.html">
+                <h2>
+                    Project Job
+                </h2>
+                </a>
+            </div>
+            </div>
+
+            <div class="navbar">
+                <a href="./index.html">
+                    <li>Home</li>
+                </a>
+                <a href="#">
+                    <li>Jobs</li>
+                </a>
+                <a href="./createjob.html">
+                    <li>New Job</li>
+                </a>
+
+                <a href="./contact.html">
+                    <li>Contact</li>
+                </a>
+            </div>
+    </nav>
+
+
+    <div class="container_tables" id="print_content">
+        
+        <h1 class="title_table">Jobs</h1>
+    <table id="job_table" class="job_list">
+        <thead>
+            <tr>
+                <th class="sr">Sr. No.</th>
+                <th class="job">  Job</th>
+                <th class="qty">Qty.</th>
+                <th class="cost"> Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>01</td>
+                <td>Arviti Global</td>
+                <td>100</td>
+                <td>10000</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>GDSC</td>
+                <td>10</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>KJSIEIT</td>
+                <td>1000</td>
+                <td>100000</td>
+            </tr>
+            <tr>
+                <td>  </td>
+                <td>Total</td>
+                <td>100000</td>
+                <td>5000</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="download-box">
+        <button id="btnExport" type="button" class="button"  onclick="Export()">Download PDF</button>
+   
+   
+        <button id="downloadcsv" type="button" class="button">Download CSV</button>
+        
+    </div>
+
+    
+
+
+ 
+
+
+</body>
+</html>
+<script src="../js/exportcsv.js"></script>
+<script>
+    
+    const dataTable = document.getElementById("job_table");
+    const expcsv = document.getElementById("downloadcsv");
+
+    expcsv.addEventListener("click",() =>{
+        const exporter = new TableCSVExporter(dataTable);
+        const csvOutput = exporter.convertToCSV();
+        const csvBlob = new Blob([csvOutput], { type: "text/csv" });
+        const blobUrl = URL.createObjectURL(csvBlob);
+        const anchorElement = document.createElement("a");
+
+        anchorElement.href = blobUrl;
+        anchorElement.download = "jobs.csv";
+        anchorElement.click();
+
+        setTimeout(() => {
+            URL.revokeObjectURL(blobUrl);
+        }, 500); 
+    });
+    
+    
+  
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script type="text/javascript">
+    function Export() {
+        html2canvas(document.getElementById('job_table'), {
+            onrendered: function (canvas) {
+                var data = canvas.toDataURL();
+                var docDefinition = {
+                    content: [{
+                        image: data,
+                        width: 500
+                    }]
+                };
+                pdfMake.createPdf(docDefinition).download("Table.pdf");
+            }
+        });
+    }
+</script>
