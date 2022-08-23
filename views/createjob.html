@@ -6,38 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/createjobstyle.css">
     <link rel="shortcut icon" href="../static/Logofinal.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Create A New Job</title>
 </head>
 <body>
     <nav>
+
+        <div class="empty">
+            
+        </div>
+
         <div class="logo_name">
             
             <div class="logo">
                 <a href="#"><img src="../static/Logofinal.jpg" alt="logo"></a>
             </div>
-
-            <div class="tagline">
-                <a href="#">
-                <h2>
-                    Project Job
-                </h2>
-                </a>
-            </div>
-            </div>
+        </div>
 
             <div class="navbar">
-                <a href="#">
-                    <li>Home</li>
-                </a>
-                <a href="../views/index.html">
+               
+                <a href="./index.html">
                     <li>Jobs</li>
                 </a>
-                <a href="#">
+                <a href="./createjob.html">
                     <li>New Job</li>
                 </a>
-
-                <a href="#">
-                    <li>Contact</li>
+                <a href="./jobdetails.html">
+                    <li>Job Details</li>
                 </a>
             </div>
     </nav>
@@ -45,68 +40,43 @@
     <div class="container_newjob">
 
         <label for="fname">1. Name of the Client:</label>
-        <input type="text" id="fname" name="fname">
+        <input type="text" id="cname" name="fname">
         <br><br>
         <label for="mname">2. Name of the Job:</label>
-        <input type="text" id="mname" name="fname">
+        <input type="text" id="jname" name="fname">
         <br><br>
-        <label for="lname">3. Specification:</label>
-        <br><br>    
+          
+        <label for="add">3. Date:</label>
+        <input type="date" id="start" name="job-date" value="2000-01-01" min="2000-01-01" max="3000-12-31">
+        <br><br>
+        <label for="add">4. Quantity:</label>
+        <input type="text" id="packing" name="fname">
+        <br><br>
+        <label for="add">5. Amount:</label>
+        <input type="text" id="cost" name="fname">
+        <br><br>
+
+        <label for="lname">6. Specification:</label>
+        <br><br>  
 
         <div class="specsbox">
-        <label for="email">a. Paper:</label>
-        <input type="text" id="email" name="fname">
-        <br><br>
-        <label for="Eid">b. Printing:</label>
-        <input type="text" id="Eid" name="fname">
-        <br><br>
-        <label for="add">c. Lamination:</label>
-        <input type="text" id="add" name="fname">
-        <br><br>
-        <label for="add">d. Foiling:</label>
-        <input type="text" id="add" name="fname">
-        <br><br>
-        <label for="add">e. Die Punching:</label>
-        <input type="text" id="add" name="fname">
-        <br><br>
-        <label for="add">f. Backtoback Pesting:</label>
-        <input type="text" id="add" name="fname">
-        <br><br>
-        <label for="add">g. Half Cutting:</label>
-        <input type="text" id="add" name="fname">
-        <br><br>
-        <label for="add">h. Spot U.V.:</label>
-        <input type="text" id="add" name="fname">
-        <br><br>
-        <label for="add">i. Centre Pinning:</label>
-        <input type="text" id="add" name="fname">
-        <br><br>
-        <label for="add">j. Section Sewing Binding:</label>
-        <input type="text" id="add" name="fname">
-        <br><br>
-        <label for="add">k. Perfect Binding:</label>
-        <input type="text" id="add" name="fname">
-        <br><br>
-        <label for="add">l. Strip Gumming:</label>
-        <input type="text" id="add" name="fname">
-        <br><br>
-        <label for="add">m. Varnishing:</label>
-        <input type="text" id="add" name="fname">
-        <br><br>
+            <ol type="a" id="speclist">
+                <li><input type="text" id="spec" name="specname" value="" placeholder="Specification Name">
+                    <input type="date" id="spec" name="specdate" value="2000-01-01" min="2000-01-01" max="3000-12-31" placeholder="Specification Date">
+                    <br>
+                    <input type="text" id="spec" name="speccompany" value="" placeholder="Company Name">
+                    <input type="text" id="spec" name="specdescription" value="" placeholder="Description">
+                    <span id="hidethis"><button id="close" onclick="remove()"><img src="../static/x-square.svg" alt=""></button></span>
+                    <input type="text" id="spec" name="specquantity" value="" placeholder="Quantity">
+                    <input type="text" id="spec" name="specamount" value="" placeholder="Amount">
+                </li>
+            </ol>  
         </div>
-        <label for="add">4. Quantity:</label>
-        <input type="text" id="add" name="fname">
-        <br><br>
-        <label for="add">5. Packing:</label>
-        <input type="text" id="add" name="fname">
-        <br><br>
-        
+        <div class="newspec"><button id="add_more_fields"><i class="fa fa-plus"></i>Add Specification</button></div>
+        <button id="submitbtn" class="submit">Submit</button>
         </div>
-
-        <button class="submit">Submit</button>
-
     </div>
 
-    
+    <script src="../js/addrow.js"></script>
 </body>
 </html>

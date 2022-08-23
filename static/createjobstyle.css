@@ -24,11 +24,12 @@ nav{
  }
  
  .logo_name{
-     margin: 6px;
-     margin-left: 20px;
-     margin-left: 30px;
-     display: flex;
-     flex-direction: row;
+    padding-left: 250px;
+    margin: 6px;
+    margin-left: 20px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
  }
  
  .tagline h2{
@@ -94,10 +95,63 @@ nav{
     height:20px;
     border-radius: 5px;
     font-size: 25px;
-    m
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 div.specsbox{
     width: auto;
     padding-left: 50px;
+}
+
+.submit{
+    margin-top: 100x;
+    font-size: 25px;
+    background-color: white;
+    color: #0f1024;
+    border-radius: 25px;
+    padding: 5px 15px 5px 15px;
+    border: #ffffff;
+    box-shadow: 0.5px 0.5px 3px 0.5px;
+}
+
+.newspec{
+margin-top: 50px;
+margin-bottom: 50px;
+
+}
+#add_more_fields{
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    margin-top: 100x;
+    font-size: 25px;
+    background-color: white;
+    color: #0f1024;
+    border-radius: 25px;
+    padding: 5px 15px 5px 15px;
+    border: #ffffff;
+    box-shadow: 0.5px 0.5px 3px 0.5px;
+}
+
+
+#spec{
+    margin: 10px;
+}
+
+#close{
+    border: none;
+    background: none;
+    padding: 0px;
+}
+
+#close img{
+    height: 30px;
+
+}
+
+#hidethis:hover{
+    cursor:pointer;
 }

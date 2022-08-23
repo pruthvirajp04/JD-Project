@@ -26,62 +26,63 @@
             </div>
 
             <div class="navbar">
+               
                 <a href="./index.html">
-                    <li>Home</li>
-                </a>
-                <a href="#">
                     <li>Jobs</li>
                 </a>
                 <a href="./createjob.html">
                     <li>New Job</li>
                 </a>
-
-                <a href="./contact.html">
-                    <li>Contact</li>
-                </a>
+                <a href="./jobdetails.html">
+                  <li>Job Details</li>
+              </a>
+              
             </div>
     </nav>
+<div class="searchbox">
 
-
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for jobs.." title="Type in a name">
+</div>
     <div class="container_tables" id="print_content">
         
         <h1 class="title_table">Jobs</h1>
-    <table id="job_table" class="job_list">
-        <thead>
-            <tr>
-                <th class="sr">Sr. No.</th>
-                <th class="job">  Job</th>
-                <th class="qty">Qty.</th>
-                <th class="cost"> Cost</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>01</td>
-                <td>Arviti Global</td>
-                <td>100</td>
-                <td>10000</td>
+    
+        <table id="job_table" class="job_list">
+            <tr class="header">
+              <th style="width:60%;">Job</th>
+              <th style="width:40%;">Qty</th>
+              <th style="width:40%;">Cost</th>
+             
+
+
+              
             </tr>
             <tr>
-                <td>02</td>
-                <td>GDSC</td>
-                <td>10</td>
-                <td>1000</td>
+              <td>Arviti Global</td>
+              <td>10</td>
             </tr>
             <tr>
-                <td>03</td>
-                <td>KJSIEIT</td>
-                <td>1000</td>
-                <td>100000</td>
+              <td>GDSC </td>
+              <td>190</td>
+
             </tr>
             <tr>
-                <td>  </td>
-                <td>Total</td>
-                <td>100000</td>
-                <td>5000</td>
+              <td>KJSIEIT</td>
+              <td>170</td>
+
             </tr>
-        </tbody>
-    </table>
+            <tr>
+              <td>IEEE</td>
+              <td>105</td>
+
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>1045</td>
+
+            </tr>
+           
+          </table>
     </div>
 
     <div class="download-box">
@@ -144,3 +145,23 @@
         });
     }
 </script>
+<script>
+    function myFunction() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("job_table");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    </script>
