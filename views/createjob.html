@@ -19,23 +19,23 @@
         <div class="logo_name">
             
             <div class="logo">
-                <a href="#"><img src="../static/Logofinal.jpg" alt="logo"></a>
+                <a href="#" style="font-size:70px">LOGO</a>
             </div>
         </div>
 
             <div class="navbar">
-               
-                <a href="./index.html">
+                <a href="#">
+                    <li>Login</li>
+                </a>
+                <a href="../views/index.html">
                     <li>Jobs</li>
                 </a>
-                <a href="./createjob.html">
+                <a href="#">
                     <li>New Job</li>
-                </a>
-                <a href="./jobdetails.html">
-                    <li>Job Details</li>
                 </a>
             </div>
     </nav>
+    <div  style="display: none;"><label  id="no_of_specs"></label></div>
 
     <div class="container_newjob">
 
@@ -61,17 +61,33 @@
 
         <div class="specsbox">
             <ol type="a" id="speclist">
-                <li><input type="text" id="spec" name="specname" value="" placeholder="Specification Name">
-                    <input type="date" id="spec" name="specdate" value="2000-01-01" min="2000-01-01" max="3000-12-31" placeholder="Specification Date">
+                <li>
+                <!-- <input type="text" class="specnamestyle" id="spec1" onkeyup="recommend()" name="specname" value="" placeholder="Specification Name"> -->
+                    <input type="text" class="specnamestyle" id="spec1" list="specnames" name="specname" value="" placeholder="Specification Name">
+                    <input type="date" id="spec1" name="specdate" value="2000-01-01" min="2000-01-01" max="3000-12-31" placeholder="Specification Date">
                     <br>
-                    <input type="text" id="spec" name="speccompany" value="" placeholder="Company Name">
-                    <input type="text" id="spec" name="specdescription" value="" placeholder="Description">
+                    <input type="text" id="spec1" name="speccompany" value="" placeholder="Company Name">
+                    <input type="text" id="spec1" name="specdescription" value="" placeholder="Description">
                     <span id="hidethis"><button id="close" onclick="remove()"><img src="../static/x-square.svg" alt=""></button></span>
-                    <input type="text" id="spec" name="specquantity" value="" placeholder="Quantity">
-                    <input type="text" id="spec" name="specamount" value="" placeholder="Amount">
+                    <input type="text" id="spec1" name="specquantity" value="" placeholder="Quantity">
+                    <input type="text" id="spec1" name="specamount" value="" placeholder="Amount">
                 </li>
             </ol>  
         </div>
+        <datalist id="specnames">
+            <option value="Printing"></option>
+            <option value="Lamination"></option>
+            <option value="Foiling"></option>
+            <option value="Die Punching"></option>
+            <option value="Back to back pesting"></option>
+            <option value="Handcutting"></option>
+            <option value="Spot U.V."></option>
+            <option value="Centre Pinning"></option>
+            <option value="Section Sewing Binding"></option>
+            <option value="Perfect Binding"></option>
+            <option value="Strip Gumming"></option>
+            <option value="Varnishing"></option>
+        </datalist>
         <div class="newspec"><button id="add_more_fields"><i class="fa fa-plus"></i>Add Specification</button></div>
         <button id="submitbtn" class="submit">Submit</button>
         </div>
