@@ -137,7 +137,10 @@ margin-bottom: 50px;
 }
 
 
-#spec{
+#spec1{
+    margin: 10px;
+}
+.specstyle{
     margin: 10px;
 }
 
@@ -154,4 +157,29 @@ margin-bottom: 50px;
 
 #hidethis:hover{
     cursor:pointer;
+}
+
+ul{
+    list-style: none;
+}
+
+.list {
+    width: 310px;
+    background-color: #ffffff;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    border-radius: 0 0 5px 5px;
+    margin-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 310px;
+}
+
+.list-items {
+    margin: 10px;
+    width: 310px;
+}
+
+.list-items:hover {
+    background-color: #dddddd;
 }

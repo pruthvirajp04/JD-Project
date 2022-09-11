@@ -70,7 +70,7 @@ nav{
      -webkit-text-stroke-width: 1.5px;
      -webkit-text-stroke-color: black;
  }
- img{
+ img.logo{
      width: 100px;
      height: 80px;
  }
@@ -153,28 +153,141 @@ button:hover{
     justify-content: flex-end;
 }
 .searchbox{
+    margin-top: 20px;
     display: flex;
     justify-content: flex-end;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+} 
+
+.search_filter{
+    display: flex;
+    align-items: left;
 }
-#myInput{
+
+
+
+
+.searchbox button{
+    border: 0px solid black;
+    height: 40px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.searchbox button img.filtericon{
     margin: 5px;
-  border: 2px solid black;
-  border-radius: 12px;
-  text-align: center;
-  font-size: 19px;
-    width: 290px;
     height: 40px;
 }
 
+.header th{
+    text-align: left;
+}
 
 
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+  
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+  
+  /* The search field */
+#searchinput {
+    box-sizing: border-box;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+  
+#searchinput:focus {outline: 3px solid #ddd;}
+  
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown-content a:hover {background-color: #f1f1f1}
+  
+.show {display:block;}
 
+#noc,#noj,#spec,#date,#quantity,#cost{
+    width:95%;
+    height: 40px;
+    padding:5px ;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+#noc:focus{
+    outline: 3px solid #ddd;
+}
+#noj:focus{
+    outline: 3px solid #ddd;
+}
+#spec:focus{
+    outline: 3px solid #ddd;
+}
+#date:focus{
+    outline: 3px solid #ddd;
+}
+#quantity:focus{
+    outline: 3px solid #ddd;
+}
+#cost:focus{
+    outline: 3px solid #ddd;
+}
+#filterbutton{
+    width: 100%;
+}
 
+#myInput{
+    order:none;
+    appearance: none;
+    font-size: 30px;
+    background: none;
+    margin: 5px;
+    border-radius: 12px;
+    text-align: left;
+    font-size: 19px;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    border: 2px solid #ddd;
+    transition: border-color 0.5s ease;
+    
+}
 
-
-
-
-
-
-
-
+#close{
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+}
